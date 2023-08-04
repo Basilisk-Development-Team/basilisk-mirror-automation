@@ -16,4 +16,4 @@ jobs:
         run: git clone --bare https://repo.palemoon.org/Basilisk-Dev/Basilisk.git
 
       - name: Push Basilisk to GitHub
-        run: cd Basilisk && git push --mirror https://github:${{ secrets.BASILISK_REPO_TOKEN }}@github.com/basilisk-dev/basilisk-mirror
+        run: cd Basilisk.git && git push --mirror https://github:${{ secrets.BASILISK_REPO_TOKEN }}@github.com/basilisk-dev/basilisk-mirror
