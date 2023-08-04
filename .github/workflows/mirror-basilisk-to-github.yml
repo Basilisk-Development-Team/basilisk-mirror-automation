@@ -2,7 +2,7 @@ name: Mirror Basilisk to GitHub
 
 on:  
   schedule:
-    - cron: '0 0 */2 * *'  # every other day at midnight
+    - cron: '0 0 */1 * *'  # every day at midnight
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install git
-        run: sudo apt-get install git
+        run: sudo apt-get install -y git
 
       - name: Clone Basilisk repo
         run: git clone --bare https://repo.palemoon.org/Basilisk-Dev/Basilisk.git
