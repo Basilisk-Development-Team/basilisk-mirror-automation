@@ -7,7 +7,13 @@ on:
 
 jobs:
   clone-basilisk-to-github:
-    runs-on: ubuntu-late
+    runs-on: ubuntu-latest
     steps:
       - name: Install git
         run: sudo apt-get install git
+
+      - name: Clone Basilisk repo
+        run: git clone --bare https://repo.palemoon.org/Basilisk-Dev/Basilisk.git
+
+      - name: Push Basilisk to GitHub
+        run: git push --mirror https://github:${{ secrets.BASILISK_REPO_TOKEN }}@github.com/basilisk-dev/basilisk-mirror
