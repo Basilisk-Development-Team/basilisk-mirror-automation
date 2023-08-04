@@ -1,0 +1,12 @@
+name: Mirror Basilisk to GitHub
+
+on:  
+  schedule:
+    - cron: '0 0 */2 * *'  # every other day at midnight
+
+jobs:
+  clone-basilisk-to-github:
+    runs-on: ubuntu-late
+    steps:
+      - name: Install git
+        run: sudo apt-get install git
