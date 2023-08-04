@@ -3,6 +3,7 @@ name: Mirror Basilisk to GitHub
 on:  
   schedule:
     - cron: '0 0 */2 * *'  # every other day at midnight
+  workflow_dispatch:
 
 jobs:
   clone-basilisk-to-github:
