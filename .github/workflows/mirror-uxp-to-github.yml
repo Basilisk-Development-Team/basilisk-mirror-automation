@@ -1,0 +1,19 @@
+name: Mirror UXP to GitHub
+
+on:  
+  schedule:
+    - cron: '30 1 * * *'  # every day at 1:30 UTC
+  workflow_dispatch:
+
+jobs:
+  clone-uxp-to-github:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install git
+        run: sudo apt-get install -y git
+
+      - name: Clone UXP repo
+        run: git clone --bare https://repo.palemoon.org/MoonchildProductions/UXP.git
+
+      - name: Push UXP to GitHub
+        run: cd UXP.git && git push --mirror https://github:${{ secrets.UXP_REPO_TOKEN }}@github.com/Basilisk-Development-Team/UXP-mirror
