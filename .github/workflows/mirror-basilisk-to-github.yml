@@ -2,7 +2,7 @@ name: Mirror Basilisk to GitHub
 
 on:  
   schedule:
-    - cron: '30 0 * * *'  # every day at midnight
+    - cron: '30 0 * * *'  # every day at 12:30 UTC
   workflow_dispatch:
 
 jobs:
