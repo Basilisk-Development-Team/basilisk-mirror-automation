@@ -16,4 +16,4 @@ jobs:
         run: git clone --bare https://repo.palemoon.org/Basilisk-Dev/autoconf213-slackbuild.git
 
       - name: Push to GitHub
-        run: cd autoconf213-slackbuild.git && git push --mirror https://github:${{ secrets.AUTOCONF_SLACKBUILD_TOKEN }}@Basilisk-Development-Team/autoconf213-slackbuild-mirror
+        run: cd autoconf213-slackbuild.git && git push --mirror https://github:${{ secrets.AUTOCONF_SLACKBUILD_TOKEN }}@github.com/Basilisk-Development-Team/autoconf213-slackbuild-mirror
