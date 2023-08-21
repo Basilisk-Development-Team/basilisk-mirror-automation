@@ -1,0 +1,19 @@
+name: Mirror Autoconf 2.13 Slackbuild to GitHub
+
+on:  
+  schedule:
+    - cron: '30 6 * * *'  # every day at 6:30 UTC
+  workflow_dispatch:
+
+jobs:
+  clone-slackbuild-to-github:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install git
+        run: sudo apt-get install -y git
+
+      - name: Clone repo
+        run: git clone --bare https://repo.palemoon.org/Basilisk-Dev/autoconf213-slackbuild.git
+
+      - name: Push to GitHub
+        run: cd autoconf213-slackbuild.git && git push --mirror https://github:${{ secrets.AUTOCONF_SLACKBUILD_TOKEN }}@Basilisk-Development-Team/autoconf213-slackbuild-mirror
