@@ -18,5 +18,7 @@ jobs:
       - name: Push Basilisk to GitHub
         run: cd Basilisk.git && git push --mirror https://github:${{ secrets.BASILISK_REPO_TOKEN }}@github.com/Basilisk-Development-Team/basilisk-mirror
 
+      - uses: actions/checkout@master
+
       - name: Create dummy commit in mirror automation repo
         uses: gautamkrishnar/keepalive-workflow@master
